@@ -44,7 +44,7 @@
           <p class="card-text">Precio: {{c.precio}}</p>
           <p class="card-text">Descuento: {{c.descuento}}</p>
           <p class="card-text">Entrega: {{c.categoria}}</p>
-          <a href="#" class="btn btn-primary">Ver producto</a>
+          <a href="{% url 'producto' c.nombre%}" class="btn btn-primary">Ver producto</a>
         </div>
       </div>
       {% endfor %}

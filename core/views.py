@@ -20,8 +20,7 @@ def historial(request):
 def pedido(request):
     return render(request, 'core/pedido.html')
 
-def producto(request):
-    return render(request, 'core/producto.html')
+
 
 def EV1_Inicio_sesion(request):
     return render(request, 'core/EV1_Inicio_sesion.html')
@@ -53,3 +52,9 @@ def eliminarPlato(request, id):
     plato = Plato.objects.get(nombre=id)
     plato.delete()
     return redirect(to="Gestionar")
+
+
+def producto(request, id):
+    plato = Plato.objects.get(nombre=id)
+    contexto = {'form': PlatoForm(instance=plato)}
+    return render(request, 'core/producto.html', contexto)
