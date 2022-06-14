@@ -56,5 +56,5 @@ def eliminarPlato(request, id):
 
 def producto(request, id):
     plato = Plato.objects.get(nombre=id)
-    contexto = {'form': PlatoForm(instance=plato)}
+    contexto = {'plato': plato}
     return render(request, 'core/producto.html', contexto)

@@ -41,9 +41,9 @@
         <img src="{{c.imagen}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{c.nombre}}</h5>
-          <p class="card-text">Precio: {{c.precio}}</p>
-          <p class="card-text">Descuento: {{c.descuento}}</p>
-          <p class="card-text">Entrega: {{c.categoria}}</p>
+          <p class="card-text">Precio: ${{c.precio}}</p>
+          <p class="card-text">Descuento: {{c.descuento}}%</p>
+          <p class="card-text">Tipo Entrega: {{c.categoria}}</p>
           <a href="{% url 'producto' c.nombre%}" class="btn btn-primary">Ver producto</a>
         </div>
       </div>
