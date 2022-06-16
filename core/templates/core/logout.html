@@ -1,11 +1,8 @@
 {% extends 'core/template.html' %}
 {% load crispy_forms_tags %}
 {% block contenido %}
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form|crispy}}
-    <button type="submit" class="btn btn-primary">Enviar</button>
-</form>
-<a href="{% url 'registro' %}">¿No Tienes una cuenta?</a>
+<h5>Has cerrado sesion</h5>
+<br>
+<a href="{% url 'home' %}"></a>
 
 {% block contenido %}
