@@ -1,6 +1,17 @@
 from django.shortcuts import render, redirect
 from core.forms import PlatoForm
 from .models import *
+from django.contrib.auth.forms import UserCreationForm
+
+
+def registro(request):
+    if request.method == 'POST':
+        user = UserCreationForm(request.POST)
+        if user.is_valid():
+            user.save()
+            return redirect(to="login")
+    else:
+        return render(request, 'core/registro.html', {'form':UserCreationForm()})
 
 
 def home(request):

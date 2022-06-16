@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'core',
     'crispy_forms',
 ]
+
+LOGIN_REDIRECT_URL = 'home'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
