@@ -15,4 +15,5 @@ urlpatterns = [
     path('producto/<id>', producto, name="producto"),
     path('login', LoginView.as_view(template_name='core/login.html'), name="login"),
     path('logout', LogoutView.as_view(template_name='core/logout.html'), name="logout"),
+    path('registro', registro,name="registro"),
 ]

@@ -39,8 +39,15 @@
     font-size: larger;
 }
 
+b{
+    padding-right: 10%;
+}
+
 .nav-item{
     padding-right: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #titulo{

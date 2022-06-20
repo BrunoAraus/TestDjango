@@ -14,6 +14,8 @@ def registro(request):
         return render(request, 'core/registro.html', {'form':UserCreationForm()})
 
 
+
+
 def home(request):
     contexto = {'plato': Plato.objects.all()}
     return render(request, 'core/index.html',contexto)
@@ -31,13 +33,6 @@ def historial(request):
 def pedido(request):
     return render(request, 'core/pedido.html')
 
-
-
-def EV1_Inicio_sesion(request):
-    return render(request, 'core/EV1_Inicio_sesion.html')
-
-def EV1_Registrarse(request):
-    return render(request, 'core/EV1_Registrarse.html')
 
 def CrearPlato(request):
     contexto = {'form': PlatoForm()}
