@@ -5,13 +5,15 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 def registro(request):
-    if request.method == 'POST':
-        user = UserCreationForm(request.POST)
-        if user.is_valid():
-            user.save()
+    form = UserCreationForm()
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
             return redirect(to="login")
     else:
-        return render(request, 'core/registro.html', {'form':UserCreationForm()})
+        form = UserCreationForm()
+    return render(request, 'core/registro.html',{'form':form})
 
 
 

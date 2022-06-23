@@ -23,11 +23,14 @@
                 <p>123456789</p>
             </div>
         </div>
+        {% if not user.is_staff %}
+        {% else %}
         <div id="Botones">
             <button><a href="{% url 'Gestionar' %}">Gestionar Platos</a></button>
             <button><a href="{% url 'CrearPlato' %}">Agregar Platos</a></button>
         </div>
     </div>
+        {% endif %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>

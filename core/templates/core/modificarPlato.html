@@ -5,6 +5,10 @@
 <head>
     <link rel="stylesheet" href="{% static 'core/css/Crear.css' %}">
 </head>
+{% if not user.is_staff %}
+<h5>Permisos insuficientes</h5>
+<a href="{% url 'home' %}">volver</a>
+{% else %}
 <div class="cuerpo">
 <div class="container">
     <h5>Modificar Plato</h5>
@@ -15,5 +19,6 @@
     </form>
 </div>
 </div>
+{% endif %}
     {{mensaje}}
 {% endblock %}
