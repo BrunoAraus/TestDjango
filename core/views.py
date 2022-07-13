@@ -66,3 +66,10 @@ def producto(request, id):
     plato = Plato.objects.get(nombre=id)
     contexto = {'plato': plato}
     return render(request, 'core/producto.html', contexto)
+
+
+def descuento(request,id):
+    plato = Plato.objects.get(nombre=id)
+    plato.precio_final = plato.precio - (plato.precio * plato.descuento/100)
+    plato.save()
+    return redirect(to="home")

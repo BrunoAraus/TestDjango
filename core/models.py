@@ -12,6 +12,7 @@ class Plato(models.Model):
     nombre = models.CharField(primary_key=True, max_length=30)
     precio = models.IntegerField()
     descuento = models.IntegerField(null=True)
+    precio_final = models.IntegerField(null=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     imagen = models.CharField(null=True, max_length=400,blank=True)
 

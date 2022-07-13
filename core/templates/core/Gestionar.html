@@ -22,6 +22,7 @@
             <th>Entrega</th>
             <th>Editar</th>
             <th>Eliminar</th>
+            <th>Aplicar</th>
         </tr>
         {% for i in plato %}
         <tr>
@@ -31,6 +32,7 @@
             <td>{{i.categoria}}</td>
             <td><a href="{% url 'modificarPlato' i.nombre %}">Modificar</a></td>
             <td><a href="{% url 'eliminarPlato' i.nombre %}">Eliminar</a></td>
+            <td><a href="{% url 'descuento' i.nombre %}" style="color:blue;">Aplicar descuento</a></td>
         </tr>
         {% endfor %}
     </table>

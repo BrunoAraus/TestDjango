@@ -10,8 +10,14 @@
         <img src="{{plato.imagen}}" alt="">
         <div id="contenidocuerpo">
             <h1>Nombre: {{plato.nombre}}</h1>
+            {% if plato.descuento > 0 %}
+            <p>-Precio Oferta ${{plato.precio_final}}</p>
+            {% else %}
             <p>- Precio: ${{plato.precio}}</p>
-            <p>- Descuento: {{plato.descuento}}%</p>
+            {% endif %}
+            {% if plato.descuento > 0 %}
+            <p>-Descuento: {{plato.descuento}}%</p>
+            {% endif %}
             <p>Tipo de Entrega: {{plato.categoria}}</p>
             <div id="botoncomprar">
                 <a href="{% url 'home' %}"><h1>Comprar</h1></a>
